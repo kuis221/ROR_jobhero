@@ -1,0 +1,15 @@
+%h3 Welcome
+.container
+  .row
+    %h3 Users
+    .column
+      %table.table
+        %tbody
+          %tr
+            %th First Name
+            %th Last Name
+            %th Email
+            %th Phone Number
+          - @users.each do |user|
+            %tr
+              = render user
