@@ -10,14 +10,38 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ = require_tree .
+ *= require framework_and_overrides
  *= require_self
  */
 
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 .table th {
 	text-align: center;
+}
+
+.navbar-default {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+  min-height: 80px;
+}
+
+.navbar-nav .btn {
+  padding: 6px 12px;
+  color: #fff !important;
+  margin-top: 8px;
+  font-size: 14px !important;
+}
+
+.btn {
+  border-radius: 50px;
+}
+
+.btn-success {
+  background-color: #5fcf80;
+  border-color: #4bc970;
+}
+.btn-success:hover, .btn-success:visited, .btn-success:focus {
+  background-color: #5fcf80 !important;
+  border-color: #4bc970 !important;
 }
