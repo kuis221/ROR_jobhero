@@ -1,15 +1,27 @@
-%h3 Welcome
+%h1.text-center.bold.slogan The Best Tech Jobs in California, Period.
 .container
   .row
-    %h3 Users
-    .column
-      %table.table
-        %tbody
-          %tr
-            %th First Name
-            %th Last Name
-            %th Email
-            %th Phone Number
-          - @users.each do |user|
-            %tr
-              = render user
+    .job-btns.text-center
+      %ul
+        %li
+          %a{:href => "/"}All JOBS
+        %li
+          %a{:href => "/jobs?category=SUPPORT"}SUPPORT
+        %li
+          %a{:href => "/jobs?category=DESIGN"}DESIGN
+        %li
+          %a{:href => "/jobs?category=ENGINEERING"}ENGINEERING
+        %li
+          %a{:href => "/jobs?category=PRODUCT"}PRODUCT
+        %li
+          %a{:href => "/jobs?category=DATA+SCIENCE"}DATA SCIENCE
+      .clearfix
+    .row
+      .col-md-10.col-md-offset-1
+        %table.table
+          %tbody
+            - @tasks.each do |task|
+              %tr
+                = render task
+    .row.text-center.landing-subscribe
+      %h4 Subscribe - A Free Weekly email of the Best Tech Jobs in California, period.

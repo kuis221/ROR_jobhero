@@ -1,5 +1,5 @@
 class VisitorsController < ApplicationController
 	def index
-		@users = User.all
+		@tasks = Task.all
 	end
 end

@@ -10,13 +10,49 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- = require_tree .
- *= require framework_and_overrides
- *= require_self
  */
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "framework_and_overrides";
 
+@charset "UTF-8";@import url("//hello.myfonts.net/count/2e5a91");
+@font-face{
+  font-family: 'ProximaNova-Regular';
+  src: url("webfonts/2E5A91_2_0.eot");
+  src: url("webfonts/2E5A91_2_0.eot?#iefix") format("embedded-opentype"),
+  url("webfonts/2E5A91_2_0.woff2") format("woff2"),
+  url("webfonts/2E5A91_2_0.woff") format("woff"),
+  url("webfonts/2E5A91_2_0.ttf") format("truetype");
+}
 .table th {
 	text-align: center;
+}
+
+@media (min-width: $screen-sm-min) {
+  .container, main {
+    width: 750px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .container, main {
+    width: 970px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .container, main {
+    width: 1010px;
+  }
+}
+
+
+.container, main {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navbar-default {
@@ -41,7 +77,63 @@
   background-color: #5fcf80;
   border-color: #4bc970;
 }
+
 .btn-success:hover, .btn-success:visited, .btn-success:focus {
   background-color: #5fcf80 !important;
   border-color: #4bc970 !important;
 }
+
+.slogan {
+  font-size: 45px !important;
+  font-weight: bold;
+  color: #333333;
+  padding-top: 43px;
+}
+
+.job-btns {
+  ul {
+    list-style: none;
+    display: inline-block;
+    li {
+      float: left;
+      padding-right: 21px;
+      a {
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        &:hover, &:focus {
+          color: #ee6746;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+
+.table-time {
+  color: #a6a6a6 !important;
+  font-size: 14px;
+}
+
+.table-name {
+  color: #337ab7 !important;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: right;
+}
+
+.table-company-name {
+  color: #333333 !important;
+}
+
+.table-address {
+  color: #333333 !important;
+}
+
+.landing-subscribe {
+  font-size: 16px;
+}
+
+
+

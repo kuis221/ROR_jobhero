@@ -1,0 +1,5 @@
+%td.table-time= task.created_at.strftime("%b %d")
+%td= link_to task.name, task, class: "table-name"
+%td.table-company-time= task.company_name
+%td.table-address= task.address
+

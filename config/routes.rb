@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     post "users/verify", to: "users/sessions#verify"
   end
+
+  resources :tasks
 end
