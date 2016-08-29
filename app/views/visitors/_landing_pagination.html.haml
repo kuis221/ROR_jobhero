@@ -1,0 +1,10 @@
+%nav{:class => "text-center"}
+  %ul{:class => "pagination pagination"}
+    %li{:class => "prev disabled"}
+      %span ← Previous
+      %li{:class => "active"}
+        %span 1
+      %li
+        %a{:rel => "next", :href => "/jobs?page=2"}2
+      %li{:class => "next"}
+        %a{:rel => "next", :href => "/jobs?page=2"}Next →

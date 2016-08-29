@@ -11,6 +11,8 @@ gem 'figaro'
 gem 'simple_token_authentication'
 gem 'twilio-ruby'
 gem 'iso_country_codes'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'byebug'

@@ -20,8 +20,7 @@
       .col-md-10.col-md-offset-1
         %table.table
           %tbody
-            - @tasks.each do |task|
-              %tr
-                = render task
-    .row.text-center.landing-subscribe
-      %h4 Subscribe - A Free Weekly email of the Best Tech Jobs in California, period.
+            = render @tasks
+        = will_paginate @tasks
+    = render 'subscribe_form'
+    -#= render 'landing_pagination'
