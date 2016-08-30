@@ -56,8 +56,6 @@ section {
   margin: 0 auto;
 }
 .authform form {
-  @extend .well;
-  @extend .well-lg;
   padding-bottom: 40px;
 }
 .authform .right {

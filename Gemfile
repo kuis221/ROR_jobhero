@@ -21,7 +21,7 @@ group :development, :test do
   gem 'spring'
 end
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '~> 3.5.2'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'

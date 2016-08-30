@@ -1,14 +1,11 @@
 .authform
-  %h2 Sign up
+  %h2 Sign Up For Free
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = f.error_notification
     .form-inputs
-      = f.input :first_name, required: true, autofocus: true
-      = f.input :last_name, required: true
-      = f.input :email, required: true
+      = f.input :email, required: true, autofocus: true
       = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
       = f.input :password_confirmation, required: true
-      = f.input :phone_number, required: true
     .form-actions
-      = f.button :submit, "Sign up"
+      = f.button :submit, "Sign Up for Free", :class => "btn btn-default btn btn-success btn-lg btn-block"
   = render "users/shared/links"
