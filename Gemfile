@@ -13,6 +13,7 @@ gem 'twilio-ruby'
 gem 'iso_country_codes'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug'

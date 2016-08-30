@@ -12,8 +12,11 @@
  *
  */
 // import the CSS framework
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "framework_and_overrides";
 
 @charset "UTF-8";@import url("//hello.myfonts.net/count/2e5a91");
@@ -25,6 +28,7 @@
   url("webfonts/2E5A91_2_0.woff") format("woff"),
   url("webfonts/2E5A91_2_0.ttf") format("truetype");
 }
+
 .table th {
 	text-align: center;
 }
@@ -67,10 +71,6 @@
   color: #fff !important;
   margin-top: 8px;
   font-size: 14px !important;
-}
-
-.btn {
-  border-radius: 50px;
 }
 
 .btn-success {
@@ -138,4 +138,59 @@
 }
 
 
+.no-padd {
+  padding: 0 !important;
+}
 
+.btn-twitter {
+  display: inline-block;
+  height: 20px;
+  padding: 1px 8px 1px 6px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  background-color: #1b95e0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  &:hover {
+    text-decoration: none;
+  }
+  i {
+    display: inline;
+  }
+}
+
+ul.footer-static-links {
+  list-style: none;
+  margin: 0;
+  li {
+    color: #ee6746;
+    font-size: 87%;
+    font-weight: bold;
+    display: inline;
+    border-right: 1px solid #000000;
+    padding: 0 10px;
+    a {
+      color: #000000;
+    }
+  }
+  li.first {
+    padding-left: 0;
+  }
+  li.last {
+    padding-right: 0;
+    border: none;
+  }
+}
+
+ul.footer-social-links {
+  @extend .pull-right;
+  li {
+    display: inline-block;
+    vertical-align: middle; 
+    .comodo {
+      display: inline-block;
+    }
+  }
+
+}

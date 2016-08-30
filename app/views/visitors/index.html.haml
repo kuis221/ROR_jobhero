@@ -21,6 +21,8 @@
         %table.table
           %tbody
             = render @tasks
-        = will_paginate @tasks
-    = render 'subscribe_form'
+        = render 'subscribe_form'
+        .text-center
+          = will_paginate @tasks
+
     -#= render 'landing_pagination'
