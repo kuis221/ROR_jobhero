@@ -22,6 +22,13 @@ group :development, :test do
 end
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.5.2'
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
+
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
