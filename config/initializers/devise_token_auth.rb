@@ -34,7 +34,7 @@ DeviseTokenAuth.setup do |config|
   # It depends on fields like email, provider and uid.
   config.default_callbacks = true
 
-  Makes it possible to change the headers names
+  # Makes it possible to change the headers names
   config.headers_names = {:'access-token' => 'access-token',
                          :'client' => 'client',
                          :'expiry' => 'expiry',
