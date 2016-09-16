@@ -14,4 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require angular
+//= require angular-ui-router
+//= require ng-token-auth
+//= require angular-bootstrap
+//= require angular-cookies
+//= require angular-resource
+//= require angular-touch
+//= require angular-sanitize
+//= require ngToast
 //= require_tree .
