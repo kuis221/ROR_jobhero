@@ -327,7 +327,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
-  omniauth
   omniauth-facebook
   omniauth-github
   omniauth-google-oauth2
@@ -357,4 +356,4 @@ RUBY VERSION
    ruby 2.2.3p173
 
 BUNDLED WITH
-   1.13.0
+   1.13.1

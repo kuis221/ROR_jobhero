@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  devise :omniauthable, omniauth_providers: [:facebook, :github, :linked_in, :google_oauth2]
+  devise :omniauthable, omniauth_providers: [:facebook, :github, :linkedin, :google_oauth2]
   include DeviseTokenAuth::Concerns::User
   devise :omniauthable
 
@@ -25,10 +25,10 @@ class User < ActiveRecord::Base
 
 
   def self.from_omniauth(auth)
-    byebug
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
       user.email = email_is_verified ? auth.info.email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com"
+      # user.email = auth.info.blank? ? auth.info.email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com"
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
@@ -36,7 +36,6 @@ class User < ActiveRecord::Base
       user.skip_confirmation!
       user.save!
     end
-    user
   end
 
   def email_verified?

@@ -53,6 +53,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def self.provides_callback_for(provider)
     class_eval %Q{
       def #{provider}
+        byebug
         @user = User.from_omniauth(env["omniauth.auth"])
 
         if @user.persisted?
@@ -66,7 +67,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     }
   end
 
-  [:github, :facebook, :linked_in, :google_oauth2].each do |provider|
+  [:github, :facebook, :linkedin, :google_oauth2].each do |provider|
     provides_callback_for provider
   end
 
