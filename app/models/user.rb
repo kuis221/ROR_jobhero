@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
 
 
   def self.from_omniauth(auth)
+    byebug
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
       user.email = email_is_verified ? auth.info.email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com"

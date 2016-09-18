@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-  devise_for :users, :controllers => {
+  devise_for :users, path: 'auth', path_names: { sign_in: 'login' }, :controllers => {
       :sessions => "users/sessions",
       :registrations => "users/registrations",
       :passwords => "users/passwords",

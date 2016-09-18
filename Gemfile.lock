@@ -327,6 +327,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  omniauth
   omniauth-facebook
   omniauth-github
   omniauth-google-oauth2
