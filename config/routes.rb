@@ -2,15 +2,18 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-  devise_for :users, path: 'auth', path_names: { sign_in: 'login' }, :controllers => {
+  devise_for :users, :controllers => {
       :sessions => "users/sessions",
       :registrations => "users/registrations",
       :passwords => "users/passwords",
       :confirmations => "users/confirmations",
-      :unlocks => "users/unlocks"
+      :unlocks => "users/unlocks",
+      :omniauth_callbacks => "users/omniauth_callbacks"
   }
 
   resources :users
+
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   resources :tasks
 
