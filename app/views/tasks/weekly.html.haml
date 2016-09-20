@@ -1,0 +1,5 @@
+- content_for :navigation_links do
+  %li= link_to 'Jobs', '#'
+  %li= link_to 'Weekly', weekly_path
+  %li= link_to 'Blog', '#'
+  %li= link_to 'Are you Hiring?', new_user_registration_path, :class => 'btn btn-success'
