@@ -1,8 +1,15 @@
-- content_for :navigation_links do
-  %li= link_to 'Weekly', weekly_path
-  %li= link_to 'Blog', '#'
-  %li= link_to 'Log out', destroy_user_session_path, :method=>'delete'
-  %li= link_to 'Post a Job', '#', :class => 'btn btn-success'
+- if user_signed_in?
+  - content_for :navigation_links do
+    %li= link_to 'Weekly', weekly_path
+    %li= link_to 'Blog', '#'
+    %li= link_to 'Log out', destroy_user_session_path, :method=>'delete'
+    %li= link_to 'Post a Job', '#', :class => 'btn btn-success'
+- else
+  - content_for :navigation_links do
+    %li= link_to 'Weekly', weekly_path
+    %li= link_to 'Blog', '#'
+    %li= link_to 'Login', new_user_session_path
+    %li= link_to 'Are you Hiring?', new_user_registration_path, :class => 'btn btn-success'
 %h1.text-center.bold.slogan The Best Tech Jobs in California, Period.
 .container
   .row
@@ -28,7 +35,7 @@
             = render @tasks
         = render 'subscribe_form'
         .text-center
-          = will_paginate @tasks
+          = will_paginate @tasks, :container => false
 
     /= render 'landing_pagination'
 

@@ -61,6 +61,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def weekly
+    @categories = Category.paginate(:page => params[:page], :per_page => 1)
+  end
+
+  def task_list
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category

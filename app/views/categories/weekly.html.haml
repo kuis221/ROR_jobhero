@@ -19,28 +19,8 @@
         %input{:type => "email", :value => "", :name => "EMAIL", :class => "input", :id => "mce-EMAIL", :placeholder => "Want to Subscribe? Enter your email address", :required => ""}
         %input{:type => "submit", :value => "Sign up for free", :name => "subscribe", :id => "mc-embedded-subscribe", :class => "button-primary"}
   %ul{:id => "post-list"}
-    %li
-      %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
-        %aside{:class => "dates"}Sep 19
-      %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
-        Issue #56 Job Hero Weekly - Tech Jobs
-        %h2 Hot Tech Jobs, Pandora Plus, SnapChat Tips, Resumes and more...
-    %li
-      %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
-        %aside{:class => "dates"}Sep 19
-      %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
-        Issue #56 Job Hero Weekly - Tech Jobs
-        %h2 Hot Tech Jobs, Pandora Plus, SnapChat Tips, Resumes and more...
-    %li
-      %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
-        %aside{:class => "dates"}Sep 19
-      %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
-        Issue #56 Job Hero Weekly - Tech Jobs
-        %h2 Hot Tech Jobs, Pandora Plus, SnapChat Tips, Resumes and more...
+    = render @categories
   %nav{:id => "post-nav"}
-    %span{:class => "next"}
-      %a{:href => "/weekly/page2/"}
-        Older Posts
-        %span{:class => "arrow"}
+    = will_paginate @categories, :page_links => false
   %footer{:id => "footer"}
     %p{:class => "small"}© Copyright 2015-2016 Job Hero, LLC (The Best Tech Jobs in California, Period.)

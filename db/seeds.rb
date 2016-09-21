@@ -8,8 +8,8 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
-category1 = Category.create(name: "Tech Jobs")
-category2 = Category.create(name: "Tech News")
+category1 = Category.create(name: "Tech Jobs", description: "Hot Tech Jobs, Pandora Plus, SnapChat Tips, Resumes and more...")
+category2 = Category.create(name: "Tech News", description: "Hot Tech Jobs, Pandora Plus, SnapChat Tips, Resumes and more...")
 
 category1.tasks.create(name: "Front End Engineer", company_name: "DollarShaveClub", address: "Marina Del Rey")
 category1.tasks.create(name: "UI Designer", company_name: "taboola", address: "Los Angeles")
