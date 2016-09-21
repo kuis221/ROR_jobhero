@@ -2,7 +2,7 @@
   -#%li= link_to 'Edit account', edit_user_registration_path
   = yield :navigation_links
 - else
-  %li= link_to 'Weekly', weekly_task_path
+  %li= link_to 'Weekly', weekly_path
   %li= link_to 'Blog', '#'
   %li= link_to 'Login', new_user_session_path
   %li= link_to 'Are you Hiring?', new_user_registration_path, :class => 'btn btn-success'

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :categories
+  resources :categories
+  resources :categories
+  resources :categories
   root to: 'visitors#index'
 
   devise_for :users, path: 'auth', path_names: { sign_in: 'login' }, :controllers => {
