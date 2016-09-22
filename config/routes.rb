@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   get '/weekly', :to => 'categories#weekly'
-  get '/weekly/:year/:title', :to => 'categories#task_list'
+  get '/weekly/:year/:title/:id', :to => 'categories#task_list', :as => :tasklist
 
   namespace :api do
     scope :v1 do

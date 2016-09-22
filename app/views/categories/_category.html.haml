@@ -1,7 +1,7 @@
 %li
-  %a{:href => "/weekly/#{category.created_at.strftime("%Y")}/Issue-56-Job-Hero-Weekly-#{category.name}/"}
+  %a{:href => "#{tasklist_path(category.created_at.strftime("%Y"),'Issue-56-Job-Hero-Weekly-'+category.name, category.id)}"}
     %aside{:class => "dates"}= category.created_at.strftime("%b %d")
-  %a{:href => "/weekly/2016/Issue-56-Job-Hero-Weekly-Tech-Jobs/"}
+  %a{:href => "#{tasklist_path(category.created_at.strftime("%Y"),'Issue-56-Job-Hero-Weekly-'+category.name, category.id)}"}
     Issue #56 Job Hero Weekly -
     = category.name
     %h2= category.description
