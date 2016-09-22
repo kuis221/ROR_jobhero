@@ -16,17 +16,17 @@
     .job-btns.text-center
       %ul
         %li
-          %a{:href => "/"}All JOBS
+          = link_to 'All JOBS', root_path
         %li
-          %a{:href => "/jobs?category=SUPPORT"}SUPPORT
+          = link_to 'SUPPORT', root_path(:category => 'SUPPORT')
         %li
-          %a{:href => "/jobs?category=DESIGN"}DESIGN
+          = link_to 'DESIGN', root_path(:category => 'DESIGN')
         %li
-          %a{:href => "/jobs?category=ENGINEERING"}ENGINEERING
+          = link_to 'ENGINEERING', root_path(:category => 'ENGINEERING')
         %li
-          %a{:href => "/jobs?category=PRODUCT"}PRODUCT
+          = link_to 'PRODUCT', root_path(:category => 'PRODUCT')
         %li
-          %a{:href => "/jobs?category=DATA+SCIENCE"}DATA SCIENCE
+          = link_to 'DATA SCIENCE', root_path(:category => 'DATA SCIENCE')
       .clearfix
     .row
       .col-md-10.col-md-offset-1
@@ -35,7 +35,7 @@
             = render @tasks
         = render 'subscribe_form'
         .text-center
-          = will_paginate @tasks, :container => false
+          = will_paginate @tasks
 
     /= render 'landing_pagination'
 
