@@ -21,9 +21,12 @@ ActiveRecord::Schema.define(version: 20160922191643) do
     t.string   "image"
     t.text     "content"
     t.string   "description"
+    t.integer  "task_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "blogs", ["task_id"], name: "index_blogs_on_task_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
