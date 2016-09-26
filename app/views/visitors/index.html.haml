@@ -1,20 +1,32 @@
+- if user_signed_in?
+  - content_for :navigation_links do
+    %li= link_to 'Weekly', weekly_path
+    %li= link_to 'Blog', '#'
+    %li= link_to 'Log out', destroy_user_session_path, :method=>'delete'
+    %li= link_to 'Post a Job', '#', :class => 'btn btn-success'
+- else
+  - content_for :navigation_links do
+    %li= link_to 'Weekly', weekly_path
+    %li= link_to 'Blog', '#'
+    %li= link_to 'Login', new_user_session_path
+    %li= link_to 'Are you Hiring?', new_user_registration_path, :class => 'btn btn-success'
 %h1.text-center.bold.slogan The Best Tech Jobs in California, Period.
 .container
   .row
     .job-btns.text-center
       %ul
         %li
-          %a{:href => "/"}All JOBS
+          = link_to 'All JOBS', root_path
         %li
-          %a{:href => "/jobs?category=SUPPORT"}SUPPORT
+          = link_to 'SUPPORT', root_path(:category => 'SUPPORT')
         %li
-          %a{:href => "/jobs?category=DESIGN"}DESIGN
+          = link_to 'DESIGN', root_path(:category => 'DESIGN')
         %li
-          %a{:href => "/jobs?category=ENGINEERING"}ENGINEERING
+          = link_to 'ENGINEERING', root_path(:category => 'ENGINEERING')
         %li
-          %a{:href => "/jobs?category=PRODUCT"}PRODUCT
+          = link_to 'PRODUCT', root_path(:category => 'PRODUCT')
         %li
-          %a{:href => "/jobs?category=DATA+SCIENCE"}DATA SCIENCE
+          = link_to 'DATA SCIENCE', root_path(:category => 'DATA SCIENCE')
       .clearfix
     .row
       .col-md-10.col-md-offset-1
@@ -25,4 +37,38 @@
         .text-center
           = will_paginate @tasks
 
-    -#= render 'landing_pagination'
+    /= render 'landing_pagination'
+
+- content_for :footer_links do
+  %footer
+    %div{:class => "container-fluid"}
+      %div{:class => "row"}
+        %div{:class => "col-xs-6"}
+          %ul{:class => "footer-static-links"}
+            %li.first © 2015-2016 Job Hero, LLC
+            %li= link_to 'Newsletter', 'http://www.jobheroweekly.com/jobs'
+            %li= link_to 'Privacy', '/page/privacy'
+            %li= link_to 'FAQ', '/page/faq'
+            %li= link_to 'Contact', 'mailto:hi@jobheroweekly.com?Subject=Quick%20Question'
+            %li.last= link_to 'About', '/page/about'
+        %div{:class => "col-xs-6"}
+          %ul{:class => "footer-social-links pull-right"}
+            %li
+              = link_to image_tag('comodo_secure_seal.png',
+              :alt => "Comodo secure seal",
+              :size => "113x59"),
+              'https://ssl.comodo.com/ev-ssl-certificates.php',
+              :target => "_blank",
+              :class => "comodo",
+              :alt => "Comodo Seal"
+            %li
+              = link_to raw("<i class=\"fa fa-twitter\"></i><span class=\"label\" id=\"l\">Follow <b>@JobHero_io</b></span>"),
+              "https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fjobhero.io%2F&amp;ref_src=twsrc%5Etfw&amp;region=follow_link&amp;screen_name=JobHero_io&amp;tw_p=followbutton",
+              :id => "follow-button",
+              :class => "btn-twitter",
+              :title => "Follow JobHero.io (@JobHero_io) on Twitter"
+            %li
+              %i
+              %u
+              = link_to '9,777 followers', "https://twitter.com/intent/user?original_referer=https%3A%2F%2Fjobhero.io%2F&amp;ref_src=twsrc%5Etfw&amp;region=count_link&amp;screen_name=JobHero_io&amp;tw_p=followbutton", :id => "count", :class => "note"
+

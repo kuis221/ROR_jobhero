@@ -1,0 +1,11 @@
+= simple_form_for(@blog) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :image
+    = f.input :content
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,26 @@
+- content_for :navigation_links do
+  %li= link_to 'Jobs', root_path
+  %li= link_to 'Weekly', weekly_path
+  %li= link_to 'Blog', '#'
+  %li= link_to 'Are you Hiring?', new_user_registration_path, :class => 'btn btn-success'
+.profile
+  %section#wrapper
+    %header#header
+      = image_tag "avatar.png", :class => "2x", :id => "avatar", :size => "150x61"
+      %h1 Job Hero Weekly
+      %h2 A Free Weekly Newsletter of the latest Tech Jobs, Resources, News and Lifestyle.
+      %h5
+        Curated by
+        = link_to 'Brian Jobs', "/blog/21-Random-Facts-About-Brian-J-Jobhero.io/"
+%section.home
+  %center
+    %section#form
+      %form{:url => "//jobhero.us11.list-manage.com/subscribe/post?u=1eaaaf78d20c9e93971fd6c15&amp;id=392852e316", :id => "mc-embedded-subscribe-form", :method => "post", :name => "mc-embedded-subscribe-form", :class => "validate", :target => "_blank", :novalidate => ""}
+        %input{:type => "email", :value => "", :name => "EMAIL", :class => "input", :id => "mce-EMAIL", :placeholder => "Want to Subscribe? Enter your email address", :required => ""}
+        %input{:type => "submit", :value => "Sign up for free", :name => "subscribe", :id => "mc-embedded-subscribe", :class => "button-primary"}
+  %ul{:id => "post-list"}
+    = render @categories
+  %nav{:id => "post-nav"}
+    = will_paginate @categories, :page_links => false
+  %footer{:id => "footer"}
+    %p{:class => "small"}© Copyright 2015-2016 Job Hero, LLC (The Best Tech Jobs in California, Period.)

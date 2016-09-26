@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :name
       t.string :company_name
       t.string :address
-
+      t.belongs_to :category, index: true
       t.timestamps null: false
     end
   end
